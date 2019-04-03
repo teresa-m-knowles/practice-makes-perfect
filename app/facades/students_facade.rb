@@ -24,8 +24,6 @@ class StudentsFacade
     end
   end
 
-
-
   def students_count
     students.count
   end

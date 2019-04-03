@@ -29,4 +29,23 @@ RSpec.describe StudentsFacade do
     facade = StudentsFacade.new("Slytherin")
     expect(facade.service).to be_a(HogwartsService)
   end
+
+  describe 'can get an array of house objects' do
+    it 'houses' do
+      facade = StudentsFacade.new("Slytherin")
+      facade.houses.each do |house|
+        expect(house).to be_a(House)
+      end
+      expect(facade.houses.count).to eq(4)
+    end
+
+  end
+
+  describe 'can find its house id' do
+    it 'find_house_id' do
+      facade = StudentsFacade.new("Slytherin")
+
+      expect(facade.find_house_id).to eq(4)
+    end
+  end
 end
