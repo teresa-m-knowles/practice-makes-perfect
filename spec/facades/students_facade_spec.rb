@@ -1,6 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe StudentsFacade do
+  before :each do
+    stub_slytherin_search
+  end
   it 'exists' do
     facade = StudentsFacade.new("Slytherin")
     expect(facade).to be_a(StudentsFacade)

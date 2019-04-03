@@ -19,6 +19,11 @@ def stub_get_json(url, filename)
     .to_return(status: 200, body: json_response)
 end
 
+def stub_slytherin_search
+  stub_get_json("http://hogwarts-as-a-service.herokuapp.com/api/v1/house/4", "slytherin_students.json")
+  stub_get_json("http://hogwarts-as-a-service.herokuapp.com/api/v1/house", "all_houses.json")
+end
+
 
 ActiveRecord::Migration.maintain_test_schema!
 

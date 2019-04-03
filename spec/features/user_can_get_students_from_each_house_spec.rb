@@ -7,6 +7,8 @@ RSpec.feature 'A user can select a house from a dropdown menu and get a list of 
         describe 'And I click on "Get Students" ' do
           # Then my path should be "/search" with "house=slytherin" in the parameters
           before :each do
+            stub_slytherin_search
+
             visit '/'
             select('Slytherin', from: :house)
             click_button("Get Students")
