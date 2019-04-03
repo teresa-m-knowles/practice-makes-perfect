@@ -17,7 +17,6 @@ RSpec.feature 'A user can select a house from a dropdown menu and get a list of 
           end
 
           it 'should show a message "22 Students"' do
-            save_and_open_page
             expect(page).to have_content("22 Students")
           end
 

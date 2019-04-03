@@ -7,7 +7,7 @@ class StudentsFacade
   end
 
   def students
-    service.get_students(@house)['data'].first['attributes']['students'].map do |student_info|
+    service.get_students(@house)[:data].first[:attributes][:students].map do |student_info|
       Student.new(student_info)
     end
   end
